@@ -2,7 +2,11 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-
+## Directory-based project format
+.idea/
+*.iml
+*.iws
+*.log
 # Package Files #
 *.jar
 *.war
