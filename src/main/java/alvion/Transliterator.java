@@ -5,9 +5,6 @@ package alvion;
  */
 public class Transliterator {
 
-    //private StringBuilder transliteratedStringBuilder = new StringBuilder();
-    //private StringBuilder titleCaseStringBuilder = new StringBuilder();
-
     public String transliterateString(String stringToTranslit) {
         if (!"".equals(stringToTranslit)) {
             StringBuilder transliteratedStringBuilder = new StringBuilder();
