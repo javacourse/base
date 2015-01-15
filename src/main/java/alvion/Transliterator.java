@@ -5,17 +5,17 @@ package alvion;
  */
 public class Transliterator {
 
-    private StringBuilder transliteratedStringBuilder = new StringBuilder();
-    private StringBuilder titleCaseStringBuilder = new StringBuilder();
+    //private StringBuilder transliteratedStringBuilder = new StringBuilder();
+    //private StringBuilder titleCaseStringBuilder = new StringBuilder();
 
     public String transliterateString(String stringToTranslit) {
         if (!"".equals(stringToTranslit)) {
+            StringBuilder transliteratedStringBuilder = new StringBuilder();
             char[] charArray = stringToTranslit.toCharArray();
 
             for (char character: charArray) {
                 transliteratedStringBuilder.append(transliterateCharDifferentCase(character));
             }
-
             return transliteratedStringBuilder.toString();
         }
         else {
@@ -76,6 +76,7 @@ public class Transliterator {
         if (inputString.length() == 1) {
             return inputString.toUpperCase();
         } else {
+            StringBuilder titleCaseStringBuilder = new StringBuilder();
             char[] charArray = inputString.toCharArray();
             for (int i = 0; i < charArray.length; i++) {
                 if (i == 0) {

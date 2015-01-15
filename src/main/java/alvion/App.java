@@ -23,6 +23,7 @@ public class App
                 transliteratedText = transliterator.transliterateString(currentLine);
                 System.out.println(transliteratedText);
                 System.out.println("Tap Enter to finish...");
+                consoleLineReader.readLine();
             } catch(Exception e) {
                 System.out.println("Error reading console line...");
                 System.exit(1);
