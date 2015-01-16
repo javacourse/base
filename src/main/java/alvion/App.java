@@ -7,6 +7,7 @@ public class App
     public static void main( String[] args )
     {
         Scanner scanner = new Scanner(System.in);
+        Translit tr = new Translit();
 
         while ( true ) {
             System.out.print("Enter input line: ");

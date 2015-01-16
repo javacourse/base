@@ -1,35 +1,65 @@
 package alvion;
 
-import java.lang.reflect.Array;
-
+import java.util.HashMap;
+import java.util.Map;
 /**
  * Created by ifrey on 14.01.2015.
  * This class transliterate input string to latin characters using TYP (Traveller's Yellow Pages Transliteration) system
  * http://www.avantec.ru/?hti=41&ti=1
  */
 public class Translit {
-    private static char[] rr = {'а','б','в','г','д','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','я'};
-    private static String[] tr = {"a","b","v","g","d","e","yo","zh","z","i","y","k","l","m","n","o","p","r","s","t","u","f","kh","ts","ch","sh","shch","\"","y","'","e","yu","ya"};
+    private static final Map<Character, String> trMap = new HashMap<Character, String>();
+    static {
+        trMap.put('а', "a");
+        trMap.put('б', "b");
+        trMap.put('в', "v");
+        trMap.put('г', "g");
+        trMap.put('д', "d");
+        trMap.put('е', "e");
+        trMap.put('ё', "yo");
+        trMap.put('ж', "zh");
+        trMap.put('з', "z");
+        trMap.put('и', "i");
+        trMap.put('й', "y");
+        trMap.put('к', "k");
+        trMap.put('л', "l");
+        trMap.put('м', "m");
+        trMap.put('н', "n");
+        trMap.put('о', "o");
+        trMap.put('п', "p");
+        trMap.put('р', "r");
+        trMap.put('с', "s");
+        trMap.put('т', "t");
+        trMap.put('у', "u");
+        trMap.put('ф', "f");
+        trMap.put('х', "kh");
+        trMap.put('ц', "ts");
+        trMap.put('ч', "ch");
+        trMap.put('ш', "sh");
+        trMap.put('щ', "shch");
+        trMap.put('ъ', "\"");
+        trMap.put('ы', "y");
+        trMap.put('ь', "'");
+        trMap.put('э', "e");
+        trMap.put('ю', "yu");
+        trMap.put('я', "ya");
+    }
 
-    public static StringBuffer convert(String sIn) {
-        StringBuffer sOut = new StringBuffer();
-        int i, j;
-        char c;
-        boolean isRussionLetter;
+    public static StringBuilder convert(String sIn) {
+        StringBuilder sb = new StringBuilder();
+        int i;
+        char c, l;
+        String s;
         for (i=0; i < sIn.length(); i++) {
             c = sIn.charAt(i);
-            isRussionLetter = false;
-            j = 0;
-            for (j=0; j < rr.length; j++) {
-                if (Character.toLowerCase(c)==rr[j]) {
-                    isRussionLetter = true;
-                    if (Character.isLowerCase(c)) sOut.append(tr[j]);
-                    else sOut.append(tr[j].toUpperCase());
-                    break;
-                }
+            l = Character.toLowerCase(c);
+            if (trMap.containsKey(l)) {
+                s = trMap.get(l);
+                if (Character.isLowerCase(c)) sb.append(s);
+                else sb.append(s.toUpperCase());
             }
-            if (!isRussionLetter) sOut.append(c);   // not russian letter -> copy input character to output buffer
+            else sb.append(c);
         }
-        return sOut;
+        return sb;
     }
 }
