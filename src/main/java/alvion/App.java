@@ -15,8 +15,12 @@ public  class  App{
         do  {
             System.out.println ("\n  Enter  Rus phrase :  "  );
             String phrase =  input.nextLine();//Read Line
-            String engPhrase =  RusToEng.rusToEng (phrase) ;//Use method RusToEng class rusToEng
-            System.out.println("  You phrase in Eng : \n" + engPhrase);// output result
+            if (!phrase.equals("")) {
+                String engPhrase = RusToEng.rusToEng(phrase);//Use method RusToEng class rusToEng
+                System.out.println("  You phrase in Eng : \n" + engPhrase);// output result
+            }else       {
+                break;
+            }
         }  while  (true);
     }
 }
