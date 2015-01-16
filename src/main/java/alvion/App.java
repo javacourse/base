@@ -9,7 +9,9 @@ package alvion;
  *
  */
 public class App {
+
     public static void main (String ... arg){
+
         if (arg.length != 3) {
             System.out.println("Wrong params. Params: -i<input file name> -d<dictionary file name> -o<output file name>");
             return;
