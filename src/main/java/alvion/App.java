@@ -11,4 +11,9 @@ public class App
         System.out.println( "Hello World!" );
         System.out.println( "Hello Alvion!" );
     }
+
+    String helloWorld()
+    {
+        return "Hello world!";
+    }
 }
