@@ -140,4 +140,9 @@ public class App
 
         return resultString.toString();
     }
+
+    String helloWorld()
+    {
+        return "Hello world!";
+    }
 }
