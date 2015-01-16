@@ -44,11 +44,6 @@ public class Params {
                 dictionaryFile = s.substring(Utils.DICT_FILE_KEY.length()).trim();
             }
         }
-        if (outputFile == null) {
-            Path fp = Paths.get(inputFile);
-
-
-        }
     }
 
 }
