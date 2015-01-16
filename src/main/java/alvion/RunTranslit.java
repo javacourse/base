@@ -14,5 +14,9 @@ public class RunTranslit {
             System.out.println("Please provide text to transliterate as an argument");
         }
     }
+
+    static String doTransliteration(String sample) {
+        return Translit.transliterateCyrToLat(sample.toCharArray());
+    }
 }
 
