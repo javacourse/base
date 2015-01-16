@@ -9,7 +9,7 @@ public class RusToEng {
 
         StringBuilder builder = new StringBuilder();
         boolean isFound = false;
-        int symbolnumber = -1;
+        int symbolnumber = -1;//comment
 
         for (int i = 0; i < text.length(); i++) {
             for(int x = 0; x < abcCyr.length; x++ ) {
