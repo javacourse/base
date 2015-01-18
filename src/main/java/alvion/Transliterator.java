@@ -40,7 +40,7 @@ public class Transliterator{
         letters.put('Ц', "C");
         letters.put('Ч', "Ch");
         letters.put('Ш', "Sh");
-        letters.put('Щ', "Sh");
+        letters.put('Щ', "Sch");
         letters.put('Ъ', "'");
         letters.put('Ы', "Y");
         letters.put('Ь', "'");
@@ -73,7 +73,7 @@ public class Transliterator{
         letters.put('ц', "c");
         letters.put('ч', "ch");
         letters.put('ш', "sh");
-        letters.put('щ', "sh");
+        letters.put('щ', "sch");
         letters.put('ъ', "'");
         letters.put('ы', "y");
         letters.put('ь', "'");
