@@ -31,42 +31,45 @@ public class Transliterator {
     }
 
     private String transliterateCharLowercase(char charToTranslit) {
+        String resultLetter;
+
         switch(charToTranslit) {
-            case 'а': return "a";
-            case 'б': return "b";
-            case 'в': return "v";
-            case 'г': return "g";
-            case 'д': return "d";
-            case 'е': return "e";
-            case 'ё': return "e";
-            case 'ж': return "zh";
-            case 'з': return "z";
-            case 'и': return "i";
-            case 'й': return "y";
-            case 'к': return "k";
-            case 'л': return "l";
-            case 'м': return "m";
-            case 'н': return "n";
-            case 'о': return "o";
-            case 'п': return "p";
-            case 'р': return "r";
-            case 'с': return "s";
-            case 'т': return "t";
-            case 'у': return "u";
-            case 'ф': return "f";
-            case 'х': return "kh";
-            case 'ц': return "ts";
-            case 'ч': return "ch";
-            case 'ш': return "sh";
-            case 'щ': return "shh";
-            case 'ъ': return "";
-            case 'ы': return "y";
-            case 'ь': return "";
-            case 'э': return "e";
-            case 'ю': return "yu";
-            case 'я': return "ya";
-            default: return String.valueOf(charToTranslit);
+            case 'а': resultLetter = "a"; break;
+            case 'б': resultLetter = "b"; break;
+            case 'в': resultLetter = "v"; break;
+            case 'г': resultLetter = "g"; break;
+            case 'д': resultLetter = "d"; break;
+            case 'е': resultLetter = "e"; break;
+            case 'ё': resultLetter = "e"; break;
+            case 'ж': resultLetter = "zh"; break;
+            case 'з': resultLetter = "z"; break;
+            case 'и': resultLetter = "i"; break;
+            case 'й': resultLetter = "y"; break;
+            case 'к': resultLetter = "k"; break;
+            case 'л': resultLetter = "l"; break;
+            case 'м': resultLetter = "m"; break;
+            case 'н': resultLetter = "n"; break;
+            case 'о': resultLetter = "o"; break;
+            case 'п': resultLetter = "p"; break;
+            case 'р': resultLetter = "r"; break;
+            case 'с': resultLetter = "s"; break;
+            case 'т': resultLetter = "t"; break;
+            case 'у': resultLetter = "u"; break;
+            case 'ф': resultLetter = "f"; break;
+            case 'х': resultLetter = "kh"; break;
+            case 'ц': resultLetter = "ts"; break;
+            case 'ч': resultLetter = "ch"; break;
+            case 'ш': resultLetter = "sh"; break;
+            case 'щ': resultLetter = "shh"; break;
+            case 'ъ': resultLetter = ""; break;
+            case 'ы': resultLetter = "y"; break;
+            case 'ь': resultLetter = ""; break;
+            case 'э': resultLetter = "e"; break;
+            case 'ю': resultLetter = "yu"; break;
+            case 'я': resultLetter = "ya"; break;
+            default: resultLetter = String.valueOf(charToTranslit);
         }
+        return resultLetter;
     }
 
     private String toTitleCase(String inputString) {
