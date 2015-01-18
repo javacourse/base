@@ -8,7 +8,6 @@ import java.util.Map;
 
 public class Transliterator{
     private static Map<Character, String> letters = new HashMap<>();
-    private String text;
 
     public Transliterator(){
         this.setChars();
@@ -83,9 +82,9 @@ public class Transliterator{
         letters.put('я', "ya");
     }
 
-    public String translate(){
+    public String translate(String text){
         StringBuilder builder = new StringBuilder();
-        char [] chars = this.text.toCharArray();
+        char [] chars = text.toCharArray();
         for (char aChar : chars) {
             if(letters.get(aChar)==null){
                 builder.append(aChar);
@@ -96,12 +95,5 @@ public class Transliterator{
         return builder.toString();
     }
 
-    public void readLine() throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        this.text = reader.readLine();
-    }
 
-    public void writeLine(){
-        System.out.println(translate());
-    }
 }
