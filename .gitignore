@@ -4,6 +4,7 @@
 .mtj.tmp/
 ## Directory-based project format
 .idea/
+target/
 *.iml
 *.iws
 *.log
