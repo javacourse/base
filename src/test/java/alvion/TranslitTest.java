@@ -22,7 +22,6 @@ public class TranslitTest {
     public void testTranslit() throws Exception {
         Translit translit = new Translit();
         final String message = translit.convertString("привет");
-        System.out.println("privet");
         assertEquals("privet", message);
     }
 }
