@@ -12,4 +12,9 @@ public class App
         Translit translit = new Translit();
         translit.run();
     }
+
+    String helloWorld()
+    {
+        return "Hello world!";
+    }
 }
