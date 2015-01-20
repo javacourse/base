@@ -14,14 +14,13 @@ public class App {
     public static void main(String[] args) {
         Translitiration translitiration = new Translitiration();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Please enter user name : ");
+        System.out.println("Введите текст для транслитерации : ");
         String username = null;
-/*        try {
+        try {
             username = reader.readLine();
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
-        username = "Это пример русского текста для транслитерации";
+        }
         System.out.println(translitiration.translitirate(username));
         
         System.out.println();

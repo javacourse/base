@@ -28,6 +28,8 @@ public class TranslitirationTest {
             {"Конь","Kon'"},
             {"ЖиМоЛоСтЬ","ZhiMoLoSt'"},
             {"оЗаРеНиЕ","oZaReNiE"},
+            {"Привет С Большого Бодуна","Privet S Bol'shogo Boduna"},
+            {"Хвалим Защищающихся Ужиков","Hvalim Zaschischayuschihsya Uzhikov"},
         };
         for (String[] test1 : test) {
             assertEquals(test1[1], app.translitirate(test1[0]));
