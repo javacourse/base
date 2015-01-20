@@ -8,7 +8,12 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
-        System.out.println( "Hello Alvion!" );
+        AlvionCollection ac = new AlvionCollection();
+        ac.add("FirstString");
+        ac.add("2stString");
+        ac.add("3rdString");
+        ac.add(" String");
+        ac.add("Nth String");
+        System.out.println(ac.findStr("FS"));
     }
 }
