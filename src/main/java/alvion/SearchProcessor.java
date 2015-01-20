@@ -24,7 +24,10 @@ public class SearchProcessor {
         return searchResult;
     }
 
-    SearchProcessor(List<String> s, String p) {
+    public SearchProcessor() {
+    }
+
+    public SearchProcessor(List<String> s, String p) {
         searchSource = s;
         searchPattern = p;
     }
