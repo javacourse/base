@@ -12,6 +12,10 @@ import java.io.InputStreamReader;
 public class App {
 
     public static void main(String[] args) {
+        translitirate();
+    }
+    
+    public static void translitirate() {
         Translitiration translitiration = new Translitiration();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Введите текст для транслитерации : ");
