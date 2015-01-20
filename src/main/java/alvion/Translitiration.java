@@ -86,11 +86,10 @@ public class Translitiration {
         StringBuilder output = new StringBuilder();
         Set keys = this.transMap.keySet();
         for (int i = 0; i < input.length(); i++) {
-            if(keys.contains(input.charAt(i))){
-                output.append(this.transMap.get(input.charAt(i)));
-            }else{
-                output.append(input.charAt(i));
-            }
+            char currentLetter = input.charAt(i);
+            output.append(
+                keys.contains(currentLetter) ? this.transMap.get(currentLetter) :currentLetter
+            );
         }
         return output.toString();
     }
