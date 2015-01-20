@@ -12,7 +12,19 @@ import java.io.InputStreamReader;
 public class App {
 
     public static void main(String[] args) {
-        translitirate();
+        setSearch();
+    }
+    
+    public static void setSearch(){
+        AdvancedHashSet<String> test = new AdvancedHashSet<>();
+        test.add("Class");
+        test.add("Class Collection");
+        test.add("Collection");
+        test.add("Classical");
+        test.add("Classical Music");
+        System.out.println(test.contains("ass"));
+        
+        
     }
     
     public static void translitirate() {
