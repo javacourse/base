@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>alvion</groupId>
-	<artifactId>maven-core-project</artifactId>
+	<artifactId>javacourse</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>maven-core-project</name>
+	<name>javacourse</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
