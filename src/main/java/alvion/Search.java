@@ -11,8 +11,8 @@ public class Search {
 
     public String Find(String inputStr){
         StringBuilder result = new StringBuilder();
-        boolean modificationRequiredFlag = inputStr.toUpperCase() == inputStr;
-        Pattern pattern = Pattern.compile(new StringBuilder().append(".*?").append(inputStr).append(".*?").toString(), Pattern.CASE_INSENSITIVE);
+        boolean modificationRequiredFlag = inputStr.toUpperCase().equals(inputStr);
+        Pattern pattern = Pattern.compile(".*?" + inputStr + ".*?", Pattern.CASE_INSENSITIVE);
         Matcher match;
 
         for (String item : codes) {
