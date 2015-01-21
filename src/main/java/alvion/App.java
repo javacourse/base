@@ -3,7 +3,7 @@ package alvion;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+import java.util.HashSet;
 
 /**
  * Hello world!
@@ -16,15 +16,25 @@ public class App {
     }
     
     public static void setSearch(){
-        AdvancedHashSet<String> test = new AdvancedHashSet<>();
+        HashSet<String> test = new HashSet<>();
         test.add("Class");
         test.add("Class Collection");
         test.add("Collection");
         test.add("Classical");
         test.add("Classical Music");
-        System.out.println(test.contains("ass"));
         
+        HashSet<String> filtered;
+        filtered = HashSetHelper.stringFilter("ass", test);
+        for(String item: filtered){
+            System.out.println(item);
+        }
+        filtered.clear();
+        System.out.println("---------------------------");
         
+        filtered = HashSetHelper.abbrFilter("CM", test);
+        for(String item: filtered){
+            System.out.println(item);
+        }
     }
     
     public static void translitirate() {
