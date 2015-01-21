@@ -4,8 +4,8 @@ package alvion;
  */
 public class RusToEng {
     public static String rusToEng (String text){
-        char[] abcCyr = {'а', 'б', 'в','г','д','ё','ж','з','и','к','л','м','н','п','р','с','т','у','ў','ф','х','ц','ш','щ','ы','э','ю','я'};
-        String[] abcLat = {"a","b","v","g","d","jo","zh","z","i","k","l","m","n","p","r","s","t","u","w","f","h","ts","sh","sch","","e","ju","ja"};
+        char[] abcCyr = {'а', 'б', 'в','г','д','е','ё','ж','з','и','к','л','м','н','п','р','с','т','у','ў','ф','х','ц','ш','щ','ы','э','ю','я'};
+        String[] abcLat = {"a","b","v","g","d","e","jo","zh","z","i","k","l","m","n","p","r","s","t","u","w","f","h","ts","sh","sch","","e","ju","ja"};
 
         StringBuilder builder = new StringBuilder();
         boolean isFound = false;
