@@ -26,9 +26,4 @@ public class App
             e.printStackTrace();
         }
     }
-
-    String helloWorld()
-    {
-        return "Hello world!";
-    }
 }

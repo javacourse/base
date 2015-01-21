@@ -73,13 +73,15 @@ public class Transliteration {
     }
 
     public String Convert(String inputStr){
-        String result = "";
+        StringBuffer result = new StringBuffer();
         char[] charArray = inputStr.toCharArray();
+        String symbol;
 
         for (char i: charArray){
-            result += (null == codes.get(i)) ? i: codes.get(i);
+            symbol = codes.get(i);
+            result.append((null == symbol) ? i: symbol);
         }
 
-        return result;
+        return result.toString();
     }
 }
