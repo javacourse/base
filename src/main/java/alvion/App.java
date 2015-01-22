@@ -15,5 +15,12 @@ public class App
         ac.add(" String");
         ac.add("Nth String");
         System.out.println(ac.findStr("FS"));
+        try {
+            System.out.println(FileList.showFiles(FileList.getFiles("/home/dmitroza/")));
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
     }
 }
