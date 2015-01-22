@@ -1,5 +1,6 @@
-package alvion;
+package alvion.task1;
 
+import alvion.task1.App;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

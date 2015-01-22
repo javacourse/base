@@ -1,6 +1,7 @@
-package alvion;
+package alvion.task1;
 
 
+import alvion.task1.Transliterator;
 import org.junit.Before;
 import org.junit.Test;
 
