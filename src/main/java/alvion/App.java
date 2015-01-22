@@ -12,7 +12,11 @@ import java.util.HashSet;
 public class App {
 
     public static void main(String[] args) {
-        setSearch();
+        fileOperations();
+    }
+    
+    public static void fileOperations(){
+        FolderItem folder = new FolderItem("/home/elazarchuk");
     }
     
     public static void setSearch(){
