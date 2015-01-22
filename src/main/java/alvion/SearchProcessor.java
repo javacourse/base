@@ -50,7 +50,7 @@ public class SearchProcessor {
         String s  = (userPattern == null ? "" : userPattern);
         StringBuilder result = new StringBuilder();
         if (s.equals("")) {
-            return "(.*)";
+            return s;
         }
         if (Character.isUpperCase(s.charAt(0))) {
             for (char c : s.toCharArray()) {

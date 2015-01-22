@@ -42,32 +42,37 @@ public class SearchProcessorTest extends TestCase {
         expectedList.add("A...B...C...");
         expectedList.add("xxxxAbcxxxxxxxxx");
         expectedList.add("xxxxAbcxxxxxxxxxAbc");
-        doCase();
+        expectedList.add("Fake 1");
+        expectedList.add("Fake 2");
+        doCase("case 1");
     }
 
     public void case2() {
         userPatten = null;
-        expectedPatten = "(.*)";
+        expectedPatten = "";
         expectedList.clear();
         expectedList.addAll(sourceList);
-        doCase();
+        doCase("case 2");
     }
 
     public void case3() {
         userPatten = "Ab";
         expectedPatten = "(.*)([A|a])(.*)([B|b])(.*)";
         expectedList.clear();
+        expectedList.add("A...B...");
+        expectedList.add("A...B...C...");
         expectedList.add("xxxxAbcxxxxxxxxx");
         expectedList.add("xxxxAbcxxxxxxxxxAbc");
-        doCase();
+        doCase("case 3");
     }
 
-    public void doCase(){
-        assertEquals(expectedPatten, SearchProcessor.getSearchPattern(userPatten));
+    public void doCase(String msg){
+        assertEquals(msg, expectedPatten, SearchProcessor.getSearchPattern(userPatten));
         sp.setSearchPattern(SearchProcessor.getSearchPattern(userPatten));
         sp.process();
-        assertArrayEquals(expectedList.toArray(), sp.getSearchResult().toArray());
-        System.out.println(sp.getSearchResult());
+        System.out.println(msg + "=" + SearchProcessor.getSearchPattern(userPatten));
+        System.out.println(msg + "=" + sp.getSearchResult());
+        assertArrayEquals(msg, expectedList.toArray(), sp.getSearchResult().toArray());
     }
 
     @Test
