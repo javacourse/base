@@ -35,7 +35,7 @@ public class SearchProcessorTest extends TestCase {
 
     public void case1() {
         userPatten = "A";
-        expectedPatten = "[A]";
+        expectedPatten = "(.*)([A|a])(.*)";
         expectedList.clear();
         expectedList.add("A...");
         expectedList.add("A...B...");
@@ -47,7 +47,7 @@ public class SearchProcessorTest extends TestCase {
 
     public void case2() {
         userPatten = null;
-        expectedPatten = "";
+        expectedPatten = "(.*)";
         expectedList.clear();
         expectedList.addAll(sourceList);
         doCase();
@@ -55,7 +55,7 @@ public class SearchProcessorTest extends TestCase {
 
     public void case3() {
         userPatten = "Ab";
-        expectedPatten = "Ab";
+        expectedPatten = "(.*)([A|a])(.*)([B|b])(.*)";
         expectedList.clear();
         expectedList.add("xxxxAbcxxxxxxxxx");
         expectedList.add("xxxxAbcxxxxxxxxxAbc");

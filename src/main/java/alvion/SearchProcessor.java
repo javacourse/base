@@ -47,15 +47,24 @@ public class SearchProcessor {
     }
 
     public static String getSearchPattern(String userPattern) {
-        String result;
         String s  = (userPattern == null ? "" : userPattern);
-        Pattern p = Pattern.compile("[A-Z]*");
-        if (!s.equals("") && p.matcher(s).matches()) {
-            result = "[" + s + "]";
-        } else {
-            result = s;
+        StringBuilder result = new StringBuilder();
+        if (s.equals("")) {
+            return "(.*)";
         }
-        return result;
+        if (Character.isUpperCase(s.charAt(0))) {
+            for (char c : s.toCharArray()) {
+                result.append("(.*)([" + Character.toUpperCase(c));
+                if (Character.isLetter(c)) {
+                    result.append("|" + Character.toLowerCase(c));
+                }
+                result.append("])");
+            }
+            result.append("(.*)");
+        } else {
+            result.append("(.*)" + s + "(.*)");
+        }
+        return result.toString();
     }
 
 }
