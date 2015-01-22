@@ -1,5 +1,8 @@
 package alvion;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Hello world!
  *
@@ -8,23 +11,18 @@ public class App
 {
     public static void main( String[] args )
     {
-        if (args.length == 0)
-        {
-            System.out.println( "Enter your text as program parameter" );
-            return;
+        List<String> test = new ArrayList<String>();
+        test.add("AaaBbb");
+        test.add("aaBCcccD");
+        test.add("aaBCccc");
+        PatternFinder finder = new PatternFinder(test);
+
+        ArrayList<String> testPattern = finder.MatchPatternList("aBCd");
+
+        for (int i = 0; i < testPattern.size(); i++) {
+            System.out.println( testPattern.get(i));
         }
-
-        StringBuilder  resultString = new StringBuilder();
-
-        for (int i = 0; i < args.length ; i++) {
-            resultString.append(transiterateArgument(args[i]));
-            resultString.append(" ");
-        }
-
-        System.out.println( "transleterated result : "+ resultString.toString());
     }
-
-
     private static String transiterateArgument(String arg)
     {
         StringBuilder  resultString = new StringBuilder();
