@@ -2,6 +2,8 @@ package alvion;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.NotDirectoryException;
+import java.util.Scanner;
 
 /**
  * Created by Ilya Ten
@@ -43,6 +45,23 @@ public class App {
             }
         }
 
+        System.out.println("Please enter path to directory to retrieve content or \"q(uit)\" to quit");
+        Scanner con = new Scanner(System.in);
+        String userInput;
+        FilesInDir filesInDir = new FilesInDir();
+        userInput = con.nextLine();
+        while (!("quit").startsWith(userInput.toLowerCase())) {
+            System.out.printf("Content of the directory %s:\n", userInput);
+            try {
+                for (FilesInDir.FileEntry file : filesInDir.readDirectory(userInput) ) {
+                    System.out.println(file);
+                }
+            } catch (NotDirectoryException e) {
+                e.printStackTrace();
+            }
+            userInput = con.nextLine();
+        }
+
 
     }
 
@@ -67,5 +86,6 @@ public class App {
     public InputStream openResourceFileStream(String resPath) {
         return getClass().getResourceAsStream(resPath);
     }
+
 }
 
