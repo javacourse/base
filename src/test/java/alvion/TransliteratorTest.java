@@ -12,13 +12,13 @@ public class TransliteratorTest {
 
     @Before
     public void setUp() throws Exception {
-        System.out.println("setUp");
+     //   System.out.println("setUp");
         transliterator = new Transliterator();
     }
 
     @After
     public void tearDown() throws Exception {
-        System.out.println("tearDown");
+      //  System.out.println("tearDown");
     }
 
     @Test

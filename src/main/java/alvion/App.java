@@ -53,13 +53,13 @@ public class App
 
     private static Set<String> getOriginalCollection() {
         Set<String> inputValues = new HashSet<String>();
-        inputValues.add("ЛяляЛяля");
-        inputValues.add("НаНанАНа");
-        inputValues.add("ЛоЛололо");
-        inputValues.add("РырыРыыр");
-        inputValues.add("БлабАлал");
-        inputValues.add("ЛАЛАЛАЛА");
-        inputValues.add("ЛлллАА");
+        inputValues.add("StringBuilder");
+        inputValues.add("StringBuffer");
+        inputValues.add("HashMap");
+        inputValues.add("TreeMap");
+        inputValues.add("TreeSet");
+        inputValues.add("LinkedHashSet");
+        inputValues.add("ArrayList");
 
         return inputValues;
     }
