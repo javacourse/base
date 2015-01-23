@@ -33,7 +33,7 @@ public class StringSearcherTest {
 
     @Test
     public void testFindElements() throws Exception {
-        System.out.println("testFindElements started...");
+        System.out.println("testFindElements");
         final String[] actual = {"Testsb", "StringBuffer", "StringBuilder"};
         final String strToFind = "SB";
         Object[] found = null;

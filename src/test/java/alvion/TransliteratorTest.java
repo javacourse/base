@@ -23,7 +23,7 @@ public class TransliteratorTest {
 
     @Test
     public void testTransliterateString() throws Exception {
-        System.out.println("testTransliterateString started...");
+        System.out.println("testTransliterateString");
         String messageToTransliterate = "Щука. КАРАСЬ. ЛоСоСЬ. Whale. $#&%.";
         String correctMessage = "Shhuka. KARAS. LoSoS. Whale. $#&%.";
 

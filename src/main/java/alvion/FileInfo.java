@@ -21,15 +21,9 @@ public class FileInfo {
         return size;
     }
 
-    public void setFileName(String fileName) {
+    public FileInfo(String fileName, boolean dirFlag, long size) {
         this.fileName = fileName;
-    }
-
-    public void setDir(boolean isDir) {
-        this.isDir = isDir;
-    }
-
-    public void setSize(long size) {
+        this.isDir = dirFlag;
         this.size = size;
     }
 }
