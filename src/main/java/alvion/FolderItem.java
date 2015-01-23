@@ -46,13 +46,31 @@ public class FolderItem {
     }
     
     private void _addToContent(FileItem file){
-        if(this.content.size() > 0){
-            for(int i = 0; i < this.content.size() - 1 ; i++){
-                
+        boolean isAdded = false;
+        
+        for(int i = 0; i < this.content.size(); i++){
+            if(!this._isGreater(file, this.content.get(i))){
+                this.content.add(i, file);
+                isAdded = true;
+                break;
             }
-        } else {
+        }
+        
+        if(!isAdded){
             this.content.add(file);
         }
+    }
+    
+    private boolean _isGreater(FileItem first, FileItem second){
+        if(first.isDirectory() && !second.isDirectory()){
+            return false;
+        }
+        
+        if(!first.isDirectory() && second.isDirectory()){
+            return true;
+        }
+        
+        return first.getName().compareTo(second.getName()) >= 0;
     }
     
 }

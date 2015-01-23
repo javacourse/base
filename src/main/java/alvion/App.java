@@ -17,6 +17,12 @@ public class App {
     
     public static void fileOperations(){
         FolderItem folder = new FolderItem("/home/elazarchuk");
+        for(FileItem item: folder.getContent()){
+            if(item.isDirectory()) System.out.print('[');
+            System.out.print(item.getName());
+            if(item.isDirectory()) System.out.print(']');
+            System.out.println();
+        }
     }
     
     public static void setSearch(){

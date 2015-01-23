@@ -30,7 +30,7 @@ public class FileItem {
     }
     
     public String getName(){
-        return this.location;
+        return this.name;
     }
     
     public boolean isDirectory(){
@@ -46,18 +46,6 @@ public class FileItem {
     }
     
     private String _getFullPath(){
-        return this.location.concat(this.name);
-    }
-    
-    public boolean isGreater(FileItem another){
-        if(this.isDirectory && !another.isDirectory){
-            return true;
-        }
-        
-        if(!this.isDirectory && another.isDirectory){
-            return false;
-        }
-        
-        return false;
+        return this.location.concat("/".concat(this.name));
     }
 }
