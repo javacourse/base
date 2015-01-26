@@ -4,9 +4,8 @@ package alvion;
  * Created by egetman on 1/15/2015.
  */
 
-import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
+import java.util.*;
 
 
 public  class  App{
@@ -14,11 +13,8 @@ public  class  App{
     public  static void  main(String[] args) throws IOException {
         Scanner  input=  new  Scanner(System.in);
         //ArrayList<String> tree= new ArrayList();
-
         //SearchString searchString = new SearchString();//
-
         //RusToEng rusToEng = new RusToEng();//Class transliteration
-
         /*tree.add("Appendable");
         tree.add("ArithmetricException");
         tree.add("ArrayndexOfBoundsException");
@@ -26,28 +22,26 @@ public  class  App{
         tree.add("AssertionError");
         tree.add("AutoCloseable");
         tree.add("Boolean");*/
+        ArrayList<FileInfo> list1 = new ArrayList<FileInfo>();
 
         do  {
             System.out.println ("\n  Enter phrase for search:  "  );
             String phrase =  input.nextLine();//Read Line
-            //if line isEmpty Exit
-            if (!phrase.equals("")) {
 
-                File[] list = ListOfFiles.findFiles(phrase, true);
-                if (list != null){
-                    for(int i = 0; i < list.length; i++) {
-                        if (list[i].isDirectory()) {
-                            System.out.println("DirName " + list[i].getAbsolutePath());
-                        }
+           //if line isEmpty Exit
+            if (!phrase.equals("")) {
+                try {
+                    list1 = FileList.getFiles(phrase);
+                    Collections.sort(list1);
+                    for (FileInfo s : list1) {
+                        System.out.println(s.toString());
                     }
-                    for(int i = 0; i < list.length; i++) {
-                        if (list[i].isFile()) {
-                            System.out.println("FileName " + list[i].getAbsolutePath());
-                        }
-                    }
-                }else {
-                    System.out.println("FileName " +ListOfFiles.absolutePath);
                 }
+                catch(Exception ex)
+                {
+                    ex.printStackTrace();
+                }
+
                 //Search phrase
                 //int totalElem = tree.size();
 
@@ -62,7 +56,7 @@ public  class  App{
                 //String engPhrase = RusToEng.rusToEng(phrase);//Use method RusToEng class rusToEng
                 //System.out.println("  You phrase in Eng : \n" + engPhrase);// output result
             }else       {
-                break;
+                System.exit(0);
             }
         }  while  (true);
     }
