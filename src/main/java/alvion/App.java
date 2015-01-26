@@ -1,5 +1,6 @@
 package alvion;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,9 +10,8 @@ import java.util.List;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
-        List<String> test = new ArrayList<String>();
+    public static void main( String[] args ) throws IOException {
+  /*      List<String> test = new ArrayList<String>();
         test.add("AaaBbb");
         test.add("aaBCcccD");
         test.add("aaBCccc");
@@ -21,9 +21,22 @@ public class App
 
         for (int i = 0; i < testPattern.size(); i++) {
             System.out.println( testPattern.get(i));
-        }
+        }*/
+
+        FileManager manager = new FileManager("C:");
+        manager.Run();
+
     }
-    private static String transiterateArgument(String arg)
+
+
+
+
+
+
+
+
+
+    /*private static String transiterateArgument(String arg)
     {
         StringBuilder  resultString = new StringBuilder();
         for (int i = 0; i < arg.length() ; i++) {
@@ -137,7 +150,7 @@ public class App
         }
 
         return resultString.toString();
-    }
+    }*/
 
     String helloWorld()
     {
