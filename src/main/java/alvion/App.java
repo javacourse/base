@@ -1,27 +1,39 @@
 package alvion;
 
-import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Set;
+import java.util.Scanner;
 import java.util.TreeSet;
 
-public class App 
-{
-    public static void main( String[] args ) throws IOException {
-        Set<String> set = new TreeSet();
+public class App {
 
-        set.add("Focus on Africa");
-        set.add("MindGames Magazine");
-        set.add("Who is on duty today?");
-        set.add("Sky at Night");
-        set.add("Doctor Who Adventures");
+    public static void main (String args[]) throws IOException {
 
-        InputStreamReader stream = new InputStreamReader(System.in);
-        BufferedReader in = new BufferedReader(stream);
+        Scanner scanner   = new Scanner(System.in);
 
-        Set resultSet = Collection.search(set, in.readLine());
+        while (scanner.hasNextLine()) {
+            String out =  scanner.nextLine();
 
-        Collection.printSet(resultSet);
+            if (out.isEmpty()) {
+
+                continue;
+            }
+            if(out.equals("stop")){
+                break;
+            }
+
+            File pathName = new File(out);
+            if(pathName.exists()) {
+                TreeSet<String> files = FileSystem.scanFileSystem(out);
+                for(String c : files) {
+                    System.out.println(c);
+                }
+            }
+            else {
+                System.out.println("Path not found");
+            }
+        }
+
+
     }
 }
