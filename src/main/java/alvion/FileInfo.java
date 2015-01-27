@@ -3,7 +3,7 @@ package alvion;
 /**
  * Created by Odour on 23.01.2015.
  */
-public class FileInfo {
+public class FileInfo implements Comparable{
 
     private String fileName;
     private boolean isDir;
@@ -25,5 +25,11 @@ public class FileInfo {
         this.fileName = fileName;
         this.isDir = dirFlag;
         this.size = size;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        FileInfo obj = (FileInfo) o;
+        return fileName.compareTo(obj.getFileName());
     }
 }
